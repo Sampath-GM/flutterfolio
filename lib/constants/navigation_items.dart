@@ -10,10 +10,10 @@ List<String> NavTitles = [
 
 
 
- List<Icon> Navicons =[
-   Icon(Icons.home),
-   Icon(Icons.person),
-   Icon(Icons.room_service),
-   Icon(Icons.person_2_rounded),
-   Icon(Icons.account_box_rounded)
+ List<IconData> Navicons =[
+   Icons.home,
+   Icons.person,
+   Icons.room_service,
+   Icons.person_2_rounded,
+   Icons.account_box_rounded
  ];

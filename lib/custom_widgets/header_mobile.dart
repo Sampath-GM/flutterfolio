@@ -11,9 +11,11 @@ class Headermobile extends StatelessWidget {
     return  Container(
             child: Row(
               children: [
-               const Logo(),
+                Logo(
+                
+               ),
                 const Spacer(),
-                IconButton(onPressed: (){}, 
+                IconButton(onPressed: onMenuTap, 
                 icon:const Icon(
                   Icons.menu,
                   color: Colors.white,
