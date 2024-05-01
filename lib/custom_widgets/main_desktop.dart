@@ -25,7 +25,7 @@ class Maindesktop extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 300.0),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(150.0),
+                          borderRadius: BorderRadius.all(Radius.circular(85.0)),
                           child: Image.asset("images/sam.jpg",
                             height: 400,
                             width: 400,
