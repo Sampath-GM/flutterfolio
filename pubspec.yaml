@@ -71,6 +71,9 @@ flutter:
     - images/html.png
     - images/flutter.png
     - images/ui_ux.png
+    - images/c.png
+    - images/linux.png
+    - images/mysql.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -44,4 +44,16 @@ List<Map> skillsitems = [
     "img":"images/ui_ux.png",
     "title":"UI/UX",
   },
+  {
+    "img":"images/c.png",
+    "title":"C"
+  },
+   {
+    "img":"images/linux.png",
+    "title":"linux"
+  },
+   {
+    "img":"images/mysql.png",
+    "title":"mysql"
+  },
 ];

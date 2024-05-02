@@ -7,6 +7,8 @@ import 'package:portfolio/custom_widgets/header_desktop.dart';
 import 'package:portfolio/custom_widgets/header_mobile.dart';
 import 'package:portfolio/custom_widgets/main_desktop.dart';
 import 'package:portfolio/custom_widgets/main_mobile.dart';
+import 'package:portfolio/custom_widgets/myskills_desktop.dart';
+import 'package:portfolio/custom_widgets/myskills_mobile.dart';
 
 class MyHomePage extends StatelessWidget {
    MyHomePage({super.key});
@@ -34,13 +36,14 @@ class MyHomePage extends StatelessWidget {
                   scaffoldkey.currentState?.openEndDrawer();
               },
              ),
-        
+              
               // Main page mobile and Desktop view
                 if(Constraints.maxWidth>=600.0)
                   const Maindesktop()
                 else
                   const Mainmobile(),
-
+                SizedBox(height: 80.0,),
+              //myskills      
                 Container(
                   child:  Column(
                     children: [
@@ -52,67 +55,12 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
 
-                      const SizedBox(height: 30,),
+                      const SizedBox(height: 70,),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ConstrainedBox(
-                            constraints: BoxConstraints(
-                              maxWidth: 450,
-                            ),
-                            // paltform 
-                            child: Wrap(
-                              spacing: 5.0,
-                              runSpacing: 5.0,
-                              children: [
-                                for(int i=0;i<platformitems.length;i++)
-                                Container(
-                                  width: 200,
-                                  decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 28, 29, 30),
-                                    borderRadius: BorderRadius.circular(10.0)),
-                                  child: ListTile(
-                                    contentPadding: EdgeInsets.all(5.0),
-                                    leading: Image.asset(platformitems[i]["img"],
-                                      color: Colors.white,
-                                      width: 30,
-                                      height: 30,
-                                    ),
-                                    title: Text(platformitems[i]["title"],style: TextStyle(color: Colors.white),),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 50,),
-                    // my skills
-                      Flexible(
-                        child: ConstrainedBox(
-                          constraints:const BoxConstraints(
-                            maxWidth: 500.0,
-                          ),
-                          child: Wrap(
-                            spacing: 10.0,
-                            runSpacing: 10.0,
-                            children: [
-                              for(int i=0;i<skillsitems.length;i++)
-                              Chip(
-                             
-                                label: Text(skillsitems[i]["title"]),
-                                avatar:Image.asset(skillsitems[i]["img"]),
-                                
-                              )
-                          
-                            ],
-                          ),
-                        ),
-                      )
-
-                        ],
-                      )
-
+                      if(Constraints.maxWidth>=600)
+                        const MyskillsDesktop()
+                      else
+                        const MyskillsMobile(),
                     ],
                   ),
                 height: 600,
@@ -120,6 +68,7 @@ class MyHomePage extends StatelessWidget {
               ),
         
               Container(
+                
                 height: 600,
                 color: Colors.red[100],
               ),
