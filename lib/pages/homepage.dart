@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget {
             children: [
 
               //Header page mobile and Desktop view
-              if(Constraints.maxWidth>=600.0)
+              if(Constraints.maxWidth>600.0)
                 const Headerdesktop()
               else
                 Headermobile(
@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
              ),
               
               // Main page mobile and Desktop view
-                if(Constraints.maxWidth>=600.0)
+                if(Constraints.maxWidth>600.0)
                   const Maindesktop()
                 else
                   const Mainmobile(),
@@ -57,17 +57,18 @@ class MyHomePage extends StatelessWidget {
 
                       const SizedBox(height: 70,),
 
-                      if(Constraints.maxWidth>=600)
+                      if(Constraints.maxWidth>600)
                         const MyskillsDesktop()
                       else
                         const MyskillsMobile(),
                     ],
                   ),
-                height: 600,
+                height: 800,
                 color: Colors.black,
               ),
         
               Container(
+                
                 
                 height: 600,
                 color: Colors.red[100],

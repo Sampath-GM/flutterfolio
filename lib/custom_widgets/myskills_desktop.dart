@@ -48,6 +48,7 @@ class MyskillsDesktop extends StatelessWidget {
                           child: Wrap(
                             spacing: 10.0,
                             runSpacing: 10.0,
+                            alignment: WrapAlignment.center,
                             children: [
                               for(int i=0;i<skillsitems.length;i++)
                               Chip(
