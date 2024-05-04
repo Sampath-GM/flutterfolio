@@ -1,18 +1,18 @@
 List<Map> platformitems = [
 {
-  "img":"images/android.png",
+  "img":"images/Skills/android.png",
   "title":"Android Dev"
 },
 {
-  "img":"images/web.png",
+  "img":"images/Skills/web.png",
   "title":"Web Dev"
 },
 {
-  "img":"images/ios2.png",
+  "img":"images/Skills/ios2.png",
   "title":"IOS Dev"
 },
 {
-  "img":"images/desktop.png",
+  "img":"images/Skills/desktop.png",
   "title":"Desktop Dev"
 }
 ];
@@ -21,39 +21,39 @@ List<Map> platformitems = [
 
 List<Map> skillsitems = [
   {
-    "img":"images/flutter.png",
+    "img":"images/Skills/flutter.png",
     "title":"Flutter"
   },
   {
-    "img":"images/dart.png",
+    "img":"images/Skills/dart.png",
     "title":"Dart",
   },
    {
-    "img":"images/java.png",
+    "img":"images/Skills/java.png",
     "title":"Java",
   },
    {
-    "img":"images/html.png",
+    "img":"images/Skills/html.png",
     "title":"HTML5",
   },
    {
-    "img":"images/css.png",
+    "img":"images/Skills/css.png",
     "title":"CSS",
   },
   {
-    "img":"images/ui_ux.png",
+    "img":"images/Skills/ui_ux.png",
     "title":"UI/UX",
   },
   {
-    "img":"images/c.png",
+    "img":"images/Skills/c.png",
     "title":"C"
   },
    {
-    "img":"images/linux.png",
+    "img":"images/Skills/linux.png",
     "title":"linux"
   },
    {
-    "img":"images/mysql.png",
+    "img":"images/Skills/mysql.png",
     "title":"mysql"
   },
 ];

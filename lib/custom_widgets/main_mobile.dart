@@ -14,7 +14,7 @@ class Mainmobile extends StatelessWidget {
                     children: [
                         Align(
                           alignment: Alignment.center,
-                          child: Image.asset("images/sam.jpg",
+                          child: Image.asset("images/Skills/sam.jpg",
                             height: 300,
                             width: 300,
                           ),

@@ -9,6 +9,9 @@ import 'package:portfolio/custom_widgets/main_desktop.dart';
 import 'package:portfolio/custom_widgets/main_mobile.dart';
 import 'package:portfolio/custom_widgets/myskills_desktop.dart';
 import 'package:portfolio/custom_widgets/myskills_mobile.dart';
+import 'dart:js' as js;
+
+import 'package:portfolio/custom_widgets/project_card.dart';
 
 class MyHomePage extends StatelessWidget {
    MyHomePage({super.key});
@@ -42,7 +45,7 @@ class MyHomePage extends StatelessWidget {
                   const Maindesktop()
                 else
                   const Mainmobile(),
-                SizedBox(height: 80.0,),
+                SizedBox(height: 50.0,),
               //myskills      
                 Container(
                   child:  Column(
@@ -63,16 +66,12 @@ class MyHomePage extends StatelessWidget {
                         const MyskillsMobile(),
                     ],
                   ),
-                height: 800,
                 color: Colors.black,
               ),
         
-              Container(
-                
-                
-                height: 600,
-                color: Colors.red[100],
-              ),
+              const SizedBox(height: 10,),
+              // project section 
+              Projectcardwidget(),
         
               Container(
                 height: 600,
@@ -85,3 +84,4 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
