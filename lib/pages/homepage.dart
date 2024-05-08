@@ -1,6 +1,8 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:portfolio/constants/project_utils.dart';
 import 'package:portfolio/constants/skills_items.dart';
 import 'package:portfolio/custom_widgets/drawermobile.dart';
 import 'package:portfolio/custom_widgets/header_desktop.dart';
@@ -16,6 +18,7 @@ import 'package:portfolio/custom_widgets/project_card.dart';
 class MyHomePage extends StatelessWidget {
    MyHomePage({super.key});
   final scaffoldkey = GlobalKey<ScaffoldState>();
+   final CarouselController _controller = CarouselController();
   
   @override
   Widget build(BuildContext context) {
@@ -70,13 +73,96 @@ class MyHomePage extends StatelessWidget {
               ),
         
               const SizedBox(height: 10,),
+              
               // project section 
-              Projectcardwidget(),
+
+              Container(
+                height: 800,
+                color: Colors.black,
+                  child:
+                    Column(
+                      children: [
+                        const Text("Projects",
+                          style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white
+                          ),
+                        ),
+              const SizedBox(height: 40,),
+
+              Wrap(
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  for(int i=0;i<workprojects.length;i++)
+                  Projectcardwidget(
+                    workprojects: workprojects[i],
+                  ),
+                ],
+              ),
+                      ]
+                    )
+              ),
         
               Container(
-                height: 600,
-                color: Colors.pink[100],
+                // child: SingleChildScrollView(
+                  child:  Column(
+                    children: [
+                      Text(
+                        "Certificates",
+                          style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          ),),
+                          SizedBox(height: 10,),
+                      CarouselSlider(
+                        carouselController: _controller,
+                        options: CarouselOptions(
+                          autoPlay: true,
+                      //     aspectRatio: MediaQuery.of(context).size.width /
+                      // MediaQuery.of(context).size.height,
+                      aspectRatio: 16/8,
+                      height: 600,
+                          enlargeCenterPage: true
+                        ),
+                        items: [
+                            Image.network('images/certificates/4AL22CS410.jpeg'),
+                            Image.network('images/certificates/BI-20240302-3115136.png'),
+                            Image.network('images/certificates/Screenshot from 2024-05-08 20-00-34.png'),
+                            Image.network('images/certificates/Screenshot from 2024-05-08 20-00-50.png'),
+                            Image.network('images/certificates/Screenshot from 2024-05-08 20-01-01.png'),
+                            Image.network('images/certificates/Screenshot from 2024-05-08 20-01-08.png'),
+                            Image.network('images/certificates/Screenshot from 2024-05-08 20-01-15.png'),
+                        ]
+                        ),
+                         SizedBox(height: 20), // Adjust spacing between slider and buttons if needed
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                  ElevatedButton(
+                    onPressed: () => _controller.previousPage(),
+                    child: Icon(Icons.arrow_back),
+                  ),
+                  SizedBox(width: 20), // Adjust spacing between buttons if needed
+                  ElevatedButton(
+                    onPressed: () => _controller.nextPage(),
+                    child: Icon(Icons.arrow_forward),
+                  ),
+                                ],
+                              ),
+                  
+                  
+                    ],
+                  ),
+                // ),
+                height: 900,
+                color: Colors.black,
               ),
+              Container(
+                height: 800,
+                color: Colors.black,
+              )
             ],
           ),
         );

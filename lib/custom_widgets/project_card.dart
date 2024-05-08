@@ -2,33 +2,33 @@ import 'package:flutter/material.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
+import 'package:portfolio/constants/project_utils.dart';
+
 
 class Projectcardwidget extends StatelessWidget {
   const Projectcardwidget({
     super.key,
+    required this.workprojects,
+    
   });
+  final Projectutils workprojects;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 800,
-      color: Colors.black,
-        child:Column(
-          children: [
-            const Text("Projects",
-            style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-                color: Colors.white
-              ),
-            ),
-    
-             Container(
-              
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenheight = MediaQuery.of(context).size.height;
+    return  Container(             
                     clipBehavior: Clip.antiAlias,
-                    height: 450,
-                    width: 500,
+                    height: 350,
+                    width: 400,
                     decoration: BoxDecoration(
+                      boxShadow:[
+                        BoxShadow(
+                          blurRadius: 7,
+                          color: Colors.white.withOpacity(0.5),
+                          offset: Offset(0, 3)
+                        )
+                      ],
                       color: const Color.fromARGB(255, 73, 66, 66),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
@@ -37,20 +37,22 @@ class Projectcardwidget extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Image.asset(
-                          "images/projects/instagram.jpeg",
-                          height: 250,
-                          width: 500,
+                          // "images/projects/instagram.jpeg",
+                          workprojects.image,
+                          height: 180,
+                          width: 400,
                           fit:BoxFit.cover
                         ),
     
                         // title
-                        const Padding(
+                         Padding(
                           padding: EdgeInsets.only(left:12 ,right:13 ,top:12 ,bottom:8 ),
-                          child: Text(
-                            "Instagram Clone",
+                          child:  Text(
+                            // "Instagram Clone",
+                            workprojects.title,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 25.0,
+                              fontSize: 20.0,
                             ) ,
                             
                             ),
@@ -58,22 +60,25 @@ class Projectcardwidget extends StatelessWidget {
     
                           //subtitle
     
-                          const Padding(
+                           Padding(
                             padding: EdgeInsets.fromLTRB(12,00,12,12),
                             child: Text(
-                            "Developed an Instagram-inspired app, leveraging my expertise in mobile app development and social media interfaces.",
+                            // "Developed an Instagram-inspired app, leveraging my expertise in mobile app development and social media interfaces.",
+                            workprojects.subtitle,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 15.0,
-                            ) ,
+                              fontSize: 13.0,
+                            ),
+
                             
                             ),
                           ),
-                          const Spacer(),
+                          // const Spacer(),
                           //footer
                           Container(
+                            
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
+                              horizontal: 5,
                               vertical: 12
                             ),
                             // height: 40,
@@ -96,7 +101,7 @@ class Projectcardwidget extends StatelessWidget {
                                       padding: const EdgeInsets.only(left:10.0),
                                       child: InkWell(
                                         onTap: () {
-                                          js.context.callMethod("open",["https://www.youtube.com/watch?v=8V4qqE4JHC4&list=PPSV"]);
+                                          js.context.callMethod("open",[workprojects.ioslink]);
                                         },
                                         child: Image.asset(
                                           "images/Skills/ioa.png",
@@ -142,10 +147,6 @@ class Projectcardwidget extends StatelessWidget {
                           )
                       ],
                     ),
-                  ) 
-          ],
-        
-        ),
-    );
+                  ) ;
   }
 }

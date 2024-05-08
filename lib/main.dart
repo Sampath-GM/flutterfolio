@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/demooage.dart';
 import 'package:portfolio/pages/homepage.dart';
 
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme:ThemeData(
         primaryColor: Colors.black
       ),
-      home: MyHomePage(),
+      home: MyHomePage()
     );
   }
 }
