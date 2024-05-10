@@ -13,24 +13,46 @@ class Maindesktop extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 200.0),
-                            child: Text("Hi,\nI'm Sampath \nA Flutter Developer",
-                            style:TextStyle(
-                              fontSize: 40,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold
-                              ),),
+                            child: RichText(
+                              text: TextSpan(
+                                text: "Hi,\nI'm Sampath \nA ",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 45,
+                                  fontWeight: FontWeight.bold
+                                ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: "Flutter",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 188, 71, 135)
+
+                                    )
+                                  ),
+                                  TextSpan(
+                                    text: " Developer",
+                                  )
+                                ]
+                              ),
+                            ),
                           ),
                         ],
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 300.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(85.0)),
-                          child: Image.asset("images/Skills/sam.jpg",
-                            height: 400,
-                            width: 400,
-                            )
-                            ),
+                          // borderRadius: BorderRadius.all(Radius.circular(85.0)),
+                          child: CircleAvatar(
+                            radius: 300,
+                            child:ClipOval(          
+                            child: Image.asset("images/Skills/sam.jpg",
+                              height: 500,
+                              width: 500,
+                              fit: BoxFit.cover,
+                              alignment: Alignment(-8.0, -0.7),
+                              ),
+                          ),
+                          ),
+                            
                       )
                     ],
                   ),

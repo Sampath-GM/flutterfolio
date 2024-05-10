@@ -12,44 +12,47 @@ class Mainmobile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      
                         Align(
                           alignment: Alignment.center,
-                          child: Image.asset("images/Skills/sam.jpg",
-                            height: 300,
-                            width: 300,
+                           child: CircleAvatar(
+                            radius: 150,
+                            child:ClipOval(          
+                            child: Image.asset("images/Skills/sam.jpg",
+                              height: 300,
+                              width: 300,
+                              fit: BoxFit.cover,
+                              alignment: Alignment(-8.0, -0.7),
+                              ),
+                          ),
                           ),
                         ),
 
-                        // ShaderMask(
-                        //   shaderCallback: (bounds) {
-                        //     return  LinearGradient(
-                        //       colors:[
-                        //         Colors.black.withOpacity(1.0),
-                        //         // Color.fromARGB(19, 237, 224, 224).withOpacity(0.4),
-                        //         Color.fromARGB(31, 223, 205, 205).withOpacity(0.6),
-
-                        //       ]).createShader(bounds);
-                        //   },
-                        //   child: Align(
-                        //     alignment: Alignment.center,
-                        //     child: Image.asset("images/sam.jpg",
-                        //       height: 300,
-                        //       width: 300,
-                        //     ),
-                        //   ),
-                        // ),
                       const SizedBox(
                         height: 30,
                       ),
-                      const Text("Hi,\nI'm Sampath \nA Flutter Developer",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 25,
-                        ),
-                      ),
+                         RichText(
+                              text: TextSpan(
+                                text: "Hi,\nI'm Sampath \nA ",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 45,
+                                  fontWeight: FontWeight.bold
+                                ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: "Flutter",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 188, 71, 135),
 
-                      
+                                    )
+                                  ),
+                                  TextSpan(
+                                    text: " Developer",
+                                  )
+                                ]
+                              ),
+                            ),
                     ],
                   ),
 
