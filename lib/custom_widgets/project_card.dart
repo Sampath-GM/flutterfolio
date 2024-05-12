@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 import 'package:portfolio/constants/project_utils.dart';
@@ -71,77 +73,73 @@ class Projectcardwidget extends StatelessWidget {
                               ),                            
                               ),
                             ),
-                            // const Spacer(),
+                            const Spacer(),
                             //footer
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 5,
-                                vertical: 12
-                              ),
-                              // height: 40,
-                              // width: 500,
-                              color: const Color.fromARGB(200, 63, 50, 56),
-                              child: Row(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                          "Avilabel on: ",
-                                            style: TextStyle(
-                                              color: Colors.amber[700]
+                           
+                             
+                               FractionallySizedBox(
+                                 child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                    vertical: 12,
+                                  ),
+                                  color: const Color.fromARGB(200, 63, 50, 56),
+                                  child:Row(
+                                        children: [
+                                          Text(
+                                              "Avilabel on: ",
+                                                style: TextStyle(
+                                                  color: Colors.amber[700]
+                                                ),
                                             ),
-                                        ),
+                                          
+                                          const Spacer(),
+                                          // const SizedBox(width: 130,),
+                                        
+                                            InkWell(
+                                              onTap: () {
+                                                js.context.callMethod("open",[workprojects.ioslink]);
+                                              },
+                                              child: Image.asset(
+                                                "images/Skills/ioa.png",
+                                                color: Colors.white,
+                                                width: 25,
+                                                height: 25,
+                                              ),
+                                            ),
+
+                                            InkWell(
+                                              onTap: (){
+                                              },
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(left: 10.0),
+                                                child: Image.asset(
+                                                  "images/Skills/android.png",
+                                                  color: Colors.white,
+                                                  width: 25,
+                                                  height: 25,
+                                                ),
+                                              ), 
+                                            ),
+                                            InkWell(
+                                              onTap: (){
                                       
-                                      // const Spacer(),
-                                      const SizedBox(width: 260,),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left:10.0),
-                                        child: InkWell(
-                                          onTap: () {
-                                            js.context.callMethod("open",[workprojects.ioslink]);
-                                          },
-                                          child: Image.asset(
-                                            "images/Skills/ioa.png",
-                                            color: Colors.white,
-                                            width: 30,
-                                            height: 30,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 10.0),
-                                        child: InkWell(
-                                          onTap: (){
-      
-                                          },
-                                          child: Image.asset(
-                                            "images/Skills/android.png",
-                                            color: Colors.white,
-                                            width: 30,
-                                            height: 30,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 10.0),
-                                        child: InkWell(
-                                          onTap: (){
-      
-                                          },
-                                          child: Image.asset(
-                                            "images/Skills/web.png",
-                                            color: Colors.white,
-                                            width: 30,
-                                            height: 30,
-                                          ),
-                                        ),
+                                              },
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(left: 10.0),
+                                                child: Image.asset(
+                                                  "images/Skills/web.png",
+                                                  color: Colors.white,
+                                                  width: 25,
+                                                  height: 25,
+                                                ),
+                                              ),
+                                            ),
+                                          
+                                        ],
                                       )
-                                    ],
-                                  )
-                                ],
-                              
-                              ),
-                            )
+                               ),
+                               ),
                         ],
                       ),
                     ),

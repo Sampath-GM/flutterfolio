@@ -25,7 +25,7 @@ class Maindesktop extends StatelessWidget {
                                   TextSpan(
                                     text: "Flutter",
                                     style: TextStyle(
-                                      color: Color.fromARGB(255, 188, 71, 135)
+                                      color: Color.fromARGB(255, 188, 71, 135),
 
                                     )
                                   ),

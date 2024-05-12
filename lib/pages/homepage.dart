@@ -1,9 +1,9 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/constants/project_utils.dart';
-import 'package:portfolio/constants/skills_items.dart';
+import 'package:portfolio/custom_widgets/certificate.dart';
+import 'package:portfolio/custom_widgets/custom_textfield.dart';
 import 'package:portfolio/custom_widgets/drawermobile.dart';
 import 'package:portfolio/custom_widgets/header_desktop.dart';
 import 'package:portfolio/custom_widgets/header_mobile.dart';
@@ -18,10 +18,12 @@ import 'package:portfolio/custom_widgets/project_card.dart';
 class MyHomePage extends StatelessWidget {
    MyHomePage({super.key});
   final scaffoldkey = GlobalKey<ScaffoldState>();
-   final CarouselController _controller = CarouselController();
+ 
   
   @override
   Widget build(BuildContext context) {
+    final currentHeight = MediaQuery.of(context).size.height;
+    final currentWidth = MediaQuery.of(context).size.width;
     return LayoutBuilder(
       builder: (context,Constraints) {
         return Scaffold(
@@ -31,6 +33,7 @@ class MyHomePage extends StatelessWidget {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
+       
 
               //Header page mobile and Desktop view
               if(Constraints.maxWidth>600.0)
@@ -50,7 +53,8 @@ class MyHomePage extends StatelessWidget {
                 else
                   const Mainmobile(),
                 SizedBox(height: 50.0,),
-              //myskills      
+
+                //myskills section     
                 Container(
                   child:  Column(
                     children: [
@@ -109,69 +113,64 @@ class MyHomePage extends StatelessWidget {
               ),
 
               SizedBox(height: 50,),
+
+              //certificate section 
+              MyCertificate(),
         
-              FractionallySizedBox(
-                child: Container(
-                  // child: SingleChildScrollView(
-                    child:  Column(
-                      children: [
-                        Text(
-                          "Certificates",
-                            style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold
-                            ),),
-                            SizedBox(height: 20,),
-                        CarouselSlider(
-                          carouselController: _controller,
-                          options: CarouselOptions(
-                            autoPlay: true,
-                        //     aspectRatio: MediaQuery.of(context).size.width /
-                        // MediaQuery.of(context).size.height,
-                        aspectRatio: 16/8,
-                        height: 600,
-                            enlargeCenterPage: true
+              SizedBox(height: 20,),
+              
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minWidth: 700,
+                    ),
+                    child: Row(
+                        children: [
+                          Flexible(
+                            // child: Padding(
+                            //   padding: const EdgeInsets.only(left: 20.0,right: 20.0),
+                              child: CustomTextField(
+                                
+                                hintText: "Enter Name",
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                          // ),
+                          Flexible(
+                            child: CustomTextField(
+                              hintText: "Enter Email",
+                            ),
                           ),
-                          items: [
-                              Image.network('images/certificates/cn.png'),
-                              Image.network('images/certificates/codechef_java.png'),
-                              Image.network('images/certificates/codechef.png'),
-                              Image.network('images/certificates/infosys_python.png'),
-                              Image.network('images/certificates/Nptel_java.png'),
-                              Image.network('images/certificates/RPA_developer.png'),
-                              Image.network('images/certificates/RPA_wipro.png'),
-                              Image.network('images/certificates/sales_force.png'),
-                          ]
-                          ),
-                           SizedBox(height: 20), // Adjust spacing between slider and buttons if needed
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                    ElevatedButton(
-                      onPressed: () => _controller.previousPage(),
-                      child: Icon(Icons.arrow_back),
-                    ),
-                    SizedBox(width: 20), // Adjust spacing between buttons if needed
-                    ElevatedButton(
-                      onPressed: () => _controller.nextPage(),
-                      child: Icon(Icons.arrow_forward),
-                    ),
-                                  ],
-                                ),
-                    
-                    
-                      ],
-                    ),
-                  // ),
-                  height: 900,
-                  color: Colors.black,
+                        ],
+                      ),
+                  ),
                 ),
-              ),
-              Container(
-                height: 800,
-                color: Colors.black,
-              )
+              
+                SizedBox(height: 20,),
+                 
+                        ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxWidth: 700
+                          ),
+                          child: CustomTextField(
+                            hintText:"Enter Message",
+                            maxlines: 20,
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        ElevatedButton(onPressed: (){},
+                        style: ButtonStyle(
+                          backgroundColor : MaterialStatePropertyAll<Color>(const Color.fromARGB(255, 206, 8, 241)),
+                        ),
+                        child: Text(
+                          "Submit",
+                          style: TextStyle(
+                            color: Colors.white
+                          ),
+                          )),
+                 
+              SizedBox(height: 50,)  
             ],
           ),
         );
