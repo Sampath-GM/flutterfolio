@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/constants/project_utils.dart';
+import 'package:portfolio/constants/sociallinks.dart';
 import 'package:portfolio/custom_widgets/certificate.dart';
 import 'package:portfolio/custom_widgets/custom_textfield.dart';
 import 'package:portfolio/custom_widgets/drawermobile.dart';
@@ -19,7 +20,6 @@ class MyHomePage extends StatelessWidget {
    MyHomePage({super.key});
   final scaffoldkey = GlobalKey<ScaffoldState>();
  
-  
   @override
   Widget build(BuildContext context) {
     final currentHeight = MediaQuery.of(context).size.height;
@@ -45,7 +45,7 @@ class MyHomePage extends StatelessWidget {
                   scaffoldkey.currentState?.openEndDrawer();
               },
              ),
-             SizedBox(height: 50.0,),
+             const SizedBox(height: 50.0,),
               
               // Main page mobile and Desktop view
                 if(Constraints.maxWidth>600.0)
@@ -56,7 +56,7 @@ class MyHomePage extends StatelessWidget {
 
                 //myskills section     
                 Container(
-                  child:  Column(
+                  child:Column(
                     children: [
                       Text("My Skills",
                         style: TextStyle(
@@ -112,20 +112,30 @@ class MyHomePage extends StatelessWidget {
 
               ),
 
-              SizedBox(height: 50,),
+             const SizedBox(height: 50,),
 
               //certificate section 
               MyCertificate(),
         
-              SizedBox(height: 20,),
-              
+             const SizedBox(height: 10,),
+                Center(
+                  child: Text(
+                    "Contact Me",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40
+                    ) ,
+                    ),
+                ),
+                const SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0,right: 10.0),
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(
                       minWidth: 700,
                     ),
-                    child: Row(
+                    child:const Row(
                         children: [
                           Flexible(
                             // child: Padding(
@@ -147,30 +157,53 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
               
-                SizedBox(height: 20,),
-                 
+               const SizedBox(height: 20,),
                         ConstrainedBox(
-                          constraints: BoxConstraints(
+                          constraints: const BoxConstraints(
                             maxWidth: 700
                           ),
-                          child: CustomTextField(
+                          child: const CustomTextField(
                             hintText:"Enter Message",
                             maxlines: 20,
                           ),
                         ),
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10,),
                         ElevatedButton(onPressed: (){},
-                        style: ButtonStyle(
-                          backgroundColor : MaterialStatePropertyAll<Color>(const Color.fromARGB(255, 206, 8, 241)),
+                        style:const ButtonStyle(
+                          backgroundColor : MaterialStatePropertyAll<Color>( Color.fromARGB(255, 206, 8, 241)),
                         ),
-                        child: Text(
+                        child:const Text(
                           "Submit",
                           style: TextStyle(
                             color: Colors.white
                           ),
                           )),
-                 
-              SizedBox(height: 50,)  
+                          const SizedBox(height: 10,),
+                          Padding(
+                            padding: EdgeInsets.only(left: 700),
+                            child: Row(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    js.context.callMethod('open',['social_links.linkedin']);
+                                  },
+                                  child: Image.asset(
+                                  'images/social_icons/github3.png',
+                                  height: 50,width: 50,
+                                  ),
+                                ),
+
+                                InkWell(
+                                  child: Image.asset(
+                                  'images/social_icons/linkedin.png',
+                                  ),
+                                ),
+                                Image.asset('images/social_icons/facebook.png'),
+                                Image.asset('images/social_icons/instagram.png'),
+                              ],
+                            ),
+                          ),
+             const SizedBox(height: 50,)  
             ],
           ),
         );
