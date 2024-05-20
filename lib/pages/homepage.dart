@@ -15,6 +15,7 @@ import 'package:portfolio/custom_widgets/myskills_mobile.dart';
 import 'dart:js' as js;
 
 import 'package:portfolio/custom_widgets/project_card.dart';
+import 'package:portfolio/pages/demooage.dart';
 
 class MyHomePage extends StatelessWidget {
    MyHomePage({super.key});
@@ -117,67 +118,71 @@ class MyHomePage extends StatelessWidget {
               //certificate section 
               MyCertificate(),
         
-             const SizedBox(height: 10,),
-                Center(
-                  child: Text(
-                    "Contact Me",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40
-                    ) ,
-                    ),
-                ),
-                const SizedBox(height: 20,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0,right: 10.0),
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      minWidth: 700,
-                    ),
-                    child:const Row(
-                        children: [
-                          Flexible(
-                            // child: Padding(
-                            //   padding: const EdgeInsets.only(left: 20.0,right: 20.0),
-                              child: CustomTextField(
+            // Contact me section  
+            //  const SizedBox(height: 10,),
+            //     Center(
+            //       child: Text(
+            //         "Contact Me",
+            //         style: TextStyle(
+            //           color: Colors.white,
+            //           fontWeight: FontWeight.bold,
+            //           fontSize: 40
+            //         ) ,
+            //         ),
+            //     ),
+            //     const SizedBox(height: 20,),
+            //     Padding(
+            //       padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+            //       child: ConstrainedBox(
+            //         constraints: const BoxConstraints(
+            //           minWidth: 700,
+            //         ),
+            //         child:const Row(
+            //             children: [
+            //               Flexible(
+            //                 // child: Padding(
+            //                 //   padding: const EdgeInsets.only(left: 20.0,right: 20.0),
+            //                   child: CustomTextField(
                                 
-                                hintText: "Enter Name",
-                              ),
-                            ),
-                            SizedBox(width: 10,),
-                          // ),
-                          Flexible(
-                            child: CustomTextField(
-                              hintText: "Enter Email",
-                            ),
-                          ),
-                        ],
-                      ),
-                  ),
-                ),
+            //                     hintText: "Enter Name",
+            //                   ),
+            //                 ),
+            //                 SizedBox(width: 10,),
+            //               // ),
+            //               Flexible(
+            //                 child: CustomTextField(
+            //                   hintText: "Enter Email",
+            //                 ),
+            //               ),
+            //             ],
+            //           ),
+            //       ),
+            //     ),
               
-               const SizedBox(height: 20,),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(
-                            maxWidth: 700
-                          ),
-                          child: const CustomTextField(
-                            hintText:"Enter Message",
-                            maxlines: 20,
-                          ),
-                        ),
-                        const SizedBox(height: 10,),
-                        ElevatedButton(onPressed: (){},
-                        style:const ButtonStyle(
-                          backgroundColor : MaterialStatePropertyAll<Color>( Color.fromARGB(255, 206, 8, 241)),
-                        ),
-                        child:const Text(
-                          "Submit",
-                          style: TextStyle(
-                            color: Colors.white
-                          ),
-                          )),
+            //    const SizedBox(height: 20,),
+            //             ConstrainedBox(
+            //               constraints: const BoxConstraints(
+            //                 maxWidth: 700
+            //               ),
+            //               child: const CustomTextField(
+            //                 hintText:"Enter Message",
+            //                 maxlines: 20,
+            //               ),
+            //             ),
+            //             const SizedBox(height: 10,),
+            //             ElevatedButton(onPressed: (){},
+            //             style:const ButtonStyle(
+            //               backgroundColor : MaterialStatePropertyAll<Color>( Color.fromARGB(255, 206, 8, 241)),
+            //             ),
+            //             child:const Text(
+            //               "Submit",
+            //               style: TextStyle(
+            //                 color: Colors.white
+            //               ),
+            //               )),
+            ContactMe(),
+
+            
                           const SizedBox(height: 10,),
                           Padding(
                             padding: EdgeInsets.only(left: 700),
