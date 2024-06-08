@@ -117,75 +117,23 @@ class MyHomePage extends StatelessWidget {
 
               //certificate section 
               MyCertificate(),
-        
-            // Contact me section  
-            //  const SizedBox(height: 10,),
-            //     Center(
-            //       child: Text(
-            //         "Contact Me",
-            //         style: TextStyle(
-            //           color: Colors.white,
-            //           fontWeight: FontWeight.bold,
-            //           fontSize: 40
-            //         ) ,
-            //         ),
-            //     ),
-            //     const SizedBox(height: 20,),
-            //     Padding(
-            //       padding: const EdgeInsets.only(left: 10.0,right: 10.0),
-            //       child: ConstrainedBox(
-            //         constraints: const BoxConstraints(
-            //           minWidth: 700,
-            //         ),
-            //         child:const Row(
-            //             children: [
-            //               Flexible(
-            //                 // child: Padding(
-            //                 //   padding: const EdgeInsets.only(left: 20.0,right: 20.0),
-            //                   child: CustomTextField(
-                                
-            //                     hintText: "Enter Name",
-            //                   ),
-            //                 ),
-            //                 SizedBox(width: 10,),
-            //               // ),
-            //               Flexible(
-            //                 child: CustomTextField(
-            //                   hintText: "Enter Email",
-            //                 ),
-            //               ),
-            //             ],
-            //           ),
-            //       ),
-            //     ),
               
-            //    const SizedBox(height: 20,),
-            //             ConstrainedBox(
-            //               constraints: const BoxConstraints(
-            //                 maxWidth: 700
-            //               ),
-            //               child: const CustomTextField(
-            //                 hintText:"Enter Message",
-            //                 maxlines: 20,
-            //               ),
-            //             ),
-            //             const SizedBox(height: 10,),
-            //             ElevatedButton(onPressed: (){},
-            //             style:const ButtonStyle(
-            //               backgroundColor : MaterialStatePropertyAll<Color>( Color.fromARGB(255, 206, 8, 241)),
-            //             ),
-            //             child:const Text(
-            //               "Submit",
-            //               style: TextStyle(
-            //                 color: Colors.white
-            //               ),
-            //               )),
-            ContactMe(),
+              // contact me
 
-            
-                          const SizedBox(height: 10,),
+                          const SizedBox(height: 30,),
+                                               
+                          const Center(
+                            child: Text(
+                              "Contact me",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold
+                              ),
+                              
+                              )),
                           Padding(
-                            padding: EdgeInsets.only(left: 700),
+                            padding: EdgeInsets.only(left: 700,top: 20),
                             child: Row(
                               children: [
                                 InkWell(
